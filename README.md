@@ -6,4 +6,5 @@ LUA scripts no-recoil for arma.
 ## V2
 > Mouse with level correction (0&1)
 
-Change the first line (supported tags : https://hub.docker.com/_/php/): php:your-version
+## V3
+> Spray pattern support
