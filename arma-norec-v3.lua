@@ -34,10 +34,10 @@ function OnEvent(event, arg)
                     OutputLogs('\nCorrectionLVL => 2')
                     MoveMouseRelative(Pattern[2],Pattern[3])
                     Sleep(RandomizeSleep)
-                    if Spray == 149
+                    if Spray == 149 then
                         CorrectionLVL = 3
                     end
-                elseif Spray > 150 and CorrectionLVL == 3
+                elseif Spray > 150 and CorrectionLVL == 3 then
                     OutputLogs('\nCorrectionLVL => 3')
                     MoveMouseRelative(Pattern[4],Pattern[5])
                     Sleep(RandomizeSleep)
