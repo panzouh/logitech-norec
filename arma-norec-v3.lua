@@ -1,6 +1,6 @@
 local Activation_Key = 4
 local Button = false
-local CorrectionLVL = 0
+local CorrectionLVL = 1
 local Spray = 0
 local Pattern = {-0.8, 1.5, -0.9, 2, -1, 2.5}
 local RandomizeSleep = math.random(47,48)
@@ -27,8 +27,10 @@ function OnEvent(event, arg)
                 MoveMouseRelative(Pattern[0],Pattern[1])
                 Sleep(RandomizeSleep)
                 Spray = Spray + 1
-                if Spray > 90 then
-                    CorrectionLVL = 1
+                if Spray == 89 then
+                    CorrectionLVL = 2
+                elseif Spray > 90 and CorrectionLVL == 2 then
+                    CorrectionLVL = 2
                     OutputLogs('\nCorrectionLVL => 2')
                     MoveMouseRelative(Pattern[2],Pattern[3])
                     Sleep(RandomizeSleep)
