@@ -2,8 +2,6 @@ local Activation_Key = 4
 local Button = false
 local CorrectionLVL = 1
 local Spray = 0
-local Pattern = {-0.8, 1.5, -0.9, 2, -1, 2.5}
-local RandomizeSleep = math.random(47,48)
 
 EnablePrimaryMouseButtonEvents(true);
 
@@ -22,25 +20,29 @@ function OnEvent(event, arg)
     end
 
     if Button == true then
-        if IsMouseButtonPressed(1) and arg == 1 then
+        if IsMouseButtonPressed(1) then
             repeat
-                MoveMouseRelative(Pattern[0],Pattern[1])
-                Sleep(RandomizeSleep)
+				OutputLogs('\nEntree repeat')
+                MoveMouseRelative(-0.8,1.5)
+                Sleep(16)
                 Spray = Spray + 1
                 if Spray == 89 then
+				OutputLogs('\nEntree spray 89')
                     CorrectionLVL = 2
+                    Spray = Spray + 1
                 elseif Spray > 90 and CorrectionLVL == 2 then
                     CorrectionLVL = 2
                     OutputLogs('\nCorrectionLVL => 2')
-                    MoveMouseRelative(Pattern[2],Pattern[3])
-                    Sleep(RandomizeSleep)
+                    MoveMouseRelative(-0.9,2)
+                    Sleep(16)
                     if Spray == 149 then
+                        Spray = Spray + 1
                         CorrectionLVL = 3
                     end
                 elseif Spray > 150 and CorrectionLVL == 3 then
                     OutputLogs('\nCorrectionLVL => 3')
-                    MoveMouseRelative(Pattern[4],Pattern[5])
-                    Sleep(RandomizeSleep)
+                    MoveMouseRelative(-1,2)
+                    Sleep(16)
                 end
             until not IsMouseButtonPressed(1)
             OutputLogs('\nCorrectionLVL => 1')
