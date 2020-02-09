@@ -10,4 +10,4 @@ LUA scripts no-recoil for arma.
 > Spray pattern support
 
 ## V4
-> Spray pattern support inspired by this AHK script --> https://www.autohotkey.com/boards/viewtopic.php?t=65710
+> Double correction inspired by this AHK script --> https://www.autohotkey.com/boards/viewtopic.php?t=65710
